@@ -1,0 +1,9 @@
+<h1>Sign Up</h1>
+<form action="/users" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <h3>Name:<input type="text" id="Name" name="user[name]"><h3>
+  <h3>Email:<input type="text" id="Email" name = "user[email]"></h3>
+	<h3>Password:<input type="text" id="Password" name = "user[password]"></h3>
+  <h3>Password:<input type="text" id="Password_Confirmation" name = "user[password_confirmation]"></h3>
+	<input type="submit" name="Join" value="Join">
+</form>
