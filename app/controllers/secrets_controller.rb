@@ -1,4 +1,5 @@
 class SecretsController < ApplicationController
+  before_action :require_login
   def index
     @secrets = Secret.all
   end
@@ -16,6 +17,8 @@ class SecretsController < ApplicationController
     @secret = Secret.find(params[:id])
     if @secret.user == current_user
         @secret.destroy
+        redirect_to "/users/#{current_user.id}"
+      else
         redirect_to "/users/#{current_user.id}"
       end
     end
